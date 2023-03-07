@@ -7,16 +7,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Currency Converter</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-	</script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
-	</script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
-	</script>
 
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lobster&family=Pacifico&display=swap"
-		rel="stylesheet">
+
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lobster&family=Pacifico&display=swap"
+		rel="stylesheet"> -->
 
 	<!-- linking style.css file-->
 	<link rel="stylesheet" href="static/css/style.css">
@@ -25,61 +19,58 @@
 <body>
 
 	<!-- Currency Converter -->
-	<h1 class="heading text-center display-2">
-		Order form</h1>
-
+	<h1 class="heading text-center display-2"> Order form</h1>
 	<hr>
 	<div class="container">
 
-		<div class="main" action="" method="post">
+		<div class="main" action="" method="post" novalidate>
 			{{ form.hidden_tag() }}
 			<div class="form-group">
-					{{ form.first_name.label }}<br>
-					{{ form.first_name(class="form-control searchBox") }}
+				{{ form.first_name.label }}<br>
+				{{ form.first_name(class="form-control searchBox") }}
 
-					{% for error in form.first_name.errors %}
-                    <span class="error-message">{{ error }}</span>
-                    {% endfor %}
+				{% for error in form.first_name.errors %}
+				<span class="error-message2">{{ error }}</span>
+				{% endfor %}
 			</div>
 
 			<div class="form-group">
-				<label for="oamount">
-					Surname :
-				</label>
-				<input type="text" class="form-control searchBox" placeholder="Surname" id="oamount">
+				{{ form.last_name.label }}<br>
+				{{ form.last_name(class="form-control searchBox") }}
+
+				{% for error in form.last_name.errors %}
+				<span class="error-message2">{{ error }}</span>
+				{% endfor %}
 			</div>
 
 			<div class="form-group">
-				<label for="oamount">
-					Email :
-				</label>
-				<input type="email" class="form-control searchBox" placeholder="Email" id="oamount">
+				{{ form.email.label }}<br>
+				{{ form.email(class="form-control searchBox") }}
+
+				{% for error in form.email.errors %}
+				<span class="error-message">{{ error }}</span>
+				{% endfor %}
 			</div>
 
-			<div class="form-group">
-				<label for="oamount">
-					Address :
-				</label>
-				<input type="text" class="form-control searchBox" placeholder="Address" id="oamount">
-			</div>
+			<div class="row">
+				<div class="col-sm-6">
 
-			<div class="form-group">
-				<label for="oamount">
-					Choice your favorite product :
-				</label>
-				<select id="oamount" name="product" required>
-					<option value="">Choice</option>
-					<option value="product1"> Pc mouse - 500 Kč</option>
-					<option value="product2">Pc keybord - 1 000Kč</option>
-					<option value="product3">LCD Display - 4 000 Kč</option>
-				</select>
-			</div>
+					{{ form.product.label }}<br>
+					{{ form.product(class="form-control searchBox") }}
 
-			<div class="form-group">
-				<label for="oamount">
-					Quantity :
-				</label>
-				<input type="number" id="quantity" name="quantity" min="1" max="20" required id="oamount">
+					{% for error in form.product.errors %}
+					<span class="error-message">{{ error }}</span>
+					{% endfor %}
+				</div>
+				<div class="col-sm-6">
+
+					{{ form.quantity.label }}<br>
+					{{ form.quantity(class="form-control searchBox") }}
+	
+					{% for error in form.quantity.errors %}
+					<span class="error-message">{{ error }}</span>
+					{% endfor %}
+				</div>
 			</div>
 
 			<div class="form-group">
@@ -90,68 +81,6 @@
 			</div>
 
 			<div class="row">
-				<div class="col-sm-6">
-					<div class="input-group mb-3">
-						<div class="input-group-prepend">
-							<span class="input-group-text">From</span>
-						</div>
-						<select class="form-control from" id="sel1">
-							<option value="">Select One …</option>
-							<option value="USD">USD</option>
-							<option value="AED">AED</option>
-							<option value="ARS">ARS</option>
-							<option value="AUD">AUD</option>
-							<option value="BGN">BGN</option>
-							<option value="BRL">BRL</option>
-							<option value="BSD">BSD</option>
-							<option value="CAD">CAD</option>
-							<option value="CHF">CHF</option>
-							<option value="CLP">CLP</option>
-							<option value="CNY">CNY</option>
-							<option value="COP">COP</option>
-							<option value="CZK">CZK</option>
-							<option value="DKK">DKK</option>
-							<option value="DOP">DOP</option>
-							<option value="EGP">EGP</option>
-							<option value="EUR">EUR</option>
-							<option value="FJD">FJD</option>
-							<option value="GBP">GBP</option>
-							<option value="GTQ">GTQ</option>
-							<option value="HKD">HKD</option>
-							<option value="HRK">HRK</option>
-							<option value="HUF">HUF</option>
-							<option value="IDR">IDR</option>
-							<option value="ILS">ILS</option>
-							<option value="INR">INR</option>
-							<option value="ISK">ISK</option>
-							<option value="JPY">JPY</option>
-							<option value="KRW">KRW</option>
-							<option value="KZT">KZT</option>
-							<option value="MVR">MVR</option>
-							<option value="MXN">MXN</option>
-							<option value="MYR">MYR</option>
-							<option value="NOK">NOK</option>
-							<option value="NZD">NZD</option>
-							<option value="PAB">PAB</option>
-							<option value="PEN">PEN</option>
-							<option value="PHP">PHP</option>
-							<option value="PKR">PKR</option>
-							<option value="PLN">PLN</option>
-							<option value="PYG">PYG</option>
-							<option value="RON">RON</option>
-							<option value="RUB">RUB</option>
-							<option value="SAR">SAR</option>
-							<option value="SEK">SEK</option>
-							<option value="SGD">SGD</option>
-							<option value="THB">THB</option>
-							<option value="TRY">TRY</option>
-							<option value="TWD">TWD</option>
-							<option value="UAH">UAH</option>
-							<option value="UYU">UYU</option>
-							<option value="ZAR">ZAR</option>
-						</select>
-					</div>
-				</div>
 
 				<div class="col-sm-6">
 					<div class="input-group mb-3">
@@ -218,11 +147,10 @@
 			</div>
 
 			<div class="text-center">
-				{{ form.submit(class="btn btn-primary convert m-2") }}
-				<!-- convert button -->
-				<button class="btn btn-primary convert m-2" type="submit">
-					Convert
-				</button>
+				<p>
+					{{ form.submit(class="btn btn-primary convert m-2") }}
+				</p>
+			
 
 				<!-- reset button -->
 				<button class="btn btn-primary m-2" onclick="clearVal()">
@@ -232,18 +160,15 @@
 
 		</div>
 
-		<div id="finalAmount" class="text-center">
+		<!-- <div id="finalAmount" class="text-center">
 
-			<!-- Display the converted amount -->
 			<h2>Converted Amount :
 				<span class="finalValue" style="color:green;">
 				</span>
 			</h2>
-		</div>
+		</div> -->
 	</div>
 
-	<!-- linking script.js file -->
-	<script src="static/js/script.js"></script>
 </body>
 
 </html>

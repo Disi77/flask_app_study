@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+
+	<!-- Currency Converter -->
+	<h1> Order form</h1>
+	<hr>
+	<div>
+		<div >
+			{{ form.hidden_tag() }}
+			<div>
+				{{ form.first_name.label }}<br>
+				{{ form.first_name() }}
+
+			</div>
+
+			<div>
+				{{ form.last_name.label }}<br>
+				{{ form.last_name() }}
+			</div>
+
+			<div>
+				{{ form.email.label }}<br>
+				{{ form.email() }}
+
+				{% for error in form.email.errors %}
+				<span>{{ error }}</span>
+				{% endfor %}
+			</div>
+
+			<div>
+				<div>
+
+					{{ form.product.label }}<br>
+					{{ form.product() }}
+
+					{% for error in form.product.errors %}
+					<span>{{ error }}</span>
+					{% endfor %}
+				</div>
+				<div>
+
+					{{ form.quantity.label }}<br>
+					{{ form.quantity() }}
+	
+					{% for error in form.quantity.errors %}
+					<span>{{ error }}</span>
+					{% endfor %}
+				</div>
+			</div>
+
+
+			<div>
+				<p>
+					{{ form.submit() }}
+				</p>
+		
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>
