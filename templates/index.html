@@ -3,16 +3,9 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Currency Converter</title>
+	<title>Order form</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-
-	<!-- <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lobster&family=Pacifico&display=swap"
-		rel="stylesheet"> -->
-
-	<!-- linking style.css file-->
 	<link rel="stylesheet" href="static/css/style.css">
 </head>
 
@@ -20,153 +13,145 @@
 
 	<!-- Currency Converter -->
 	<h1 class="heading text-center display-2"> Order form</h1>
-	<hr>
 	<div class="container">
+		<form name="order_form" action="" method="post" novalidate>
+			<fieldset class="form-group">
+				{{ form.hidden_tag() }}
+				<hr>
 
-		<div class="main" action="" method="post" novalidate>
-			{{ form.hidden_tag() }}
-			<div class="form-group">
-				{{ form.first_name.label }}<br>
-				{{ form.first_name(class="form-control searchBox") }}
-
-				{% for error in form.first_name.errors %}
-				<span class="error-message2">{{ error }}</span>
-				{% endfor %}
-			</div>
-
-			<div class="form-group">
-				{{ form.last_name.label }}<br>
-				{{ form.last_name(class="form-control searchBox") }}
-
-				{% for error in form.last_name.errors %}
-				<span class="error-message2">{{ error }}</span>
-				{% endfor %}
-			</div>
-
-			<div class="form-group">
-				{{ form.email.label }}<br>
-				{{ form.email(class="form-control searchBox") }}
-
-				{% for error in form.email.errors %}
-				<span class="error-message">{{ error }}</span>
-				{% endfor %}
-			</div>
-
-			<div class="row">
-				<div class="col-sm-6">
-
-					{{ form.product.label }}<br>
-					{{ form.product(class="form-control searchBox") }}
-
-					{% for error in form.product.errors %}
-					<span class="error-message">{{ error }}</span>
-					{% endfor %}
-				</div>
-				<div class="col-sm-6">
-
-					{{ form.quantity.label }}<br>
-					{{ form.quantity(class="form-control searchBox") }}
+				<div class="row">
+					<div class="col-sm-6">
+						{{ form.first_name.label }}<br>
+						{{ form.first_name(class="form-control") }}
 	
-					{% for error in form.quantity.errors %}
-					<span class="error-message">{{ error }}</span>
-					{% endfor %}
-				</div>
-			</div>
-
-			<div class="form-group">
-				<label for="oamount">
-					Amount to Convert :
-				</label>
-				<input type="text" class="form-control searchBox" placeholder="0.00" id="oamount">
-			</div>
-
-			<div class="row">
-
-				<div class="col-sm-6">
-					<div class="input-group mb-3">
-						<div class="input-group-prepend">
-							<span class="input-group-text">To</span>
-						</div>
-						<select class="form-control to" id="sel2">
-							<option value="">Select One …</option>
-							<option value="USD">USD</option>
-							<option value="AED">AED</option>
-							<option value="ARS">ARS</option>
-							<option value="AUD">AUD</option>
-							<option value="BGN">BGN</option>
-							<option value="BRL">BRL</option>
-							<option value="BSD">BSD</option>
-							<option value="CAD">CAD</option>
-							<option value="CHF">CHF</option>
-							<option value="CLP">CLP</option>
-							<option value="CNY">CNY</option>
-							<option value="COP">COP</option>
-							<option value="CZK">CZK</option>
-							<option value="DKK">DKK</option>
-							<option value="DOP">DOP</option>
-							<option value="EGP">EGP</option>
-							<option value="EUR">EUR</option>
-							<option value="FJD">FJD</option>
-							<option value="GBP">GBP</option>
-							<option value="GTQ">GTQ</option>
-							<option value="HKD">HKD</option>
-							<option value="HRK">HRK</option>
-							<option value="HUF">HUF</option>
-							<option value="IDR">IDR</option>
-							<option value="ILS">ILS</option>
-							<option value="INR">INR</option>
-							<option value="ISK">ISK</option>
-							<option value="JPY">JPY</option>
-							<option value="KRW">KRW</option>
-							<option value="KZT">KZT</option>
-							<option value="MVR">MVR</option>
-							<option value="MXN">MXN</option>
-							<option value="MYR">MYR</option>
-							<option value="NOK">NOK</option>
-							<option value="NZD">NZD</option>
-							<option value="PAB">PAB</option>
-							<option value="PEN">PEN</option>
-							<option value="PHP">PHP</option>
-							<option value="PKR">PKR</option>
-							<option value="PLN">PLN</option>
-							<option value="PYG">PYG</option>
-							<option value="RON">RON</option>
-							<option value="RUB">RUB</option>
-							<option value="SAR">SAR</option>
-							<option value="SEK">SEK</option>
-							<option value="SGD">SGD</option>
-							<option value="THB">THB</option>
-							<option value="TRY">TRY</option>
-							<option value="TWD">TWD</option>
-							<option value="UAH">UAH</option>
-							<option value="UYU">UYU</option>
-							<option value="ZAR">ZAR</option>
-						</select>
+						{% for error in form.first_name.errors %}
+						<span class="error-message">
+							{{ error }}
+						</span>
+						{% endfor %}
+					</div>
+					<div class="col-sm-6">
+						{{ form.last_name.label }}<br>
+						{{ form.last_name(class="form-control") }}
+	
+						{% for error in form.last_name.errors %}
+						<span class="error-message">{{ error }}</span>
+						{% endfor %}
 					</div>
 				</div>
-			</div>
 
-			<div class="text-center">
-				<p>
-					{{ form.submit(class="btn btn-primary convert m-2") }}
-				</p>
-			
+				<div class="row">
+					<div class="col-sm-6">
+						{{ form.email.label }}<br>
+						{{ form.email(class="form-control") }}
+	
+						{% for error in form.email.errors %}
+						<span class="error-message">{{ error }}</span>
+						{% endfor %}
+					</div>
+				</div>
 
-				<!-- reset button -->
-				<button class="btn btn-primary m-2" onclick="clearVal()">
-					Reset
-				</button>
-			</div>
+				<hr>
 
-		</div>
+				<div class="row">
+					<div class="col-sm-6">
 
-		<!-- <div id="finalAmount" class="text-center">
+						{{ form.product.label }}<br>
+						{{ form.product(class="form-control") }}
 
-			<h2>Converted Amount :
-				<span class="finalValue" style="color:green;">
-				</span>
-			</h2>
-		</div> -->
+						{% for error in form.product.errors %}
+						<span class="error-message">{{ error }}</span>
+						{% endfor %}
+					</div>
+					<div class="col-sm-6">
+
+						{{ form.quantity.label }}<br>
+						{{ form.quantity(class="form-control") }}
+
+						{% for error in form.quantity.errors %}
+						<span class="error-message">{{ error }}</span>
+						{% endfor %}
+					</div>
+				</div>
+
+				<div>
+					<label for="oamount">
+						Amount to Convert :
+					</label>
+					<input type="text" class="form-control" placeholder="0.00" id="oamount">
+				</div>
+
+				<div class="row">
+
+					<div class="col-sm-6">
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">To</span>
+							</div>
+							<select class="form-control to" id="sel2">
+								<option value="">Select One …</option>
+								<option value="USD">USD</option>
+								<option value="AED">AED</option>
+								<option value="ARS">ARS</option>
+								<option value="AUD">AUD</option>
+								<option value="BGN">BGN</option>
+								<option value="BRL">BRL</option>
+								<option value="BSD">BSD</option>
+								<option value="CAD">CAD</option>
+								<option value="CHF">CHF</option>
+								<option value="CLP">CLP</option>
+								<option value="CNY">CNY</option>
+								<option value="COP">COP</option>
+								<option value="CZK">CZK</option>
+								<option value="DKK">DKK</option>
+								<option value="DOP">DOP</option>
+								<option value="EGP">EGP</option>
+								<option value="EUR">EUR</option>
+								<option value="FJD">FJD</option>
+								<option value="GBP">GBP</option>
+								<option value="GTQ">GTQ</option>
+								<option value="HKD">HKD</option>
+								<option value="HRK">HRK</option>
+								<option value="HUF">HUF</option>
+								<option value="IDR">IDR</option>
+								<option value="ILS">ILS</option>
+								<option value="INR">INR</option>
+								<option value="ISK">ISK</option>
+								<option value="JPY">JPY</option>
+								<option value="KRW">KRW</option>
+								<option value="KZT">KZT</option>
+								<option value="MVR">MVR</option>
+								<option value="MXN">MXN</option>
+								<option value="MYR">MYR</option>
+								<option value="NOK">NOK</option>
+								<option value="NZD">NZD</option>
+								<option value="PAB">PAB</option>
+								<option value="PEN">PEN</option>
+								<option value="PHP">PHP</option>
+								<option value="PKR">PKR</option>
+								<option value="PLN">PLN</option>
+								<option value="PYG">PYG</option>
+								<option value="RON">RON</option>
+								<option value="RUB">RUB</option>
+								<option value="SAR">SAR</option>
+								<option value="SEK">SEK</option>
+								<option value="SGD">SGD</option>
+								<option value="THB">THB</option>
+								<option value="TRY">TRY</option>
+								<option value="TWD">TWD</option>
+								<option value="UAH">UAH</option>
+								<option value="UYU">UYU</option>
+								<option value="ZAR">ZAR</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="text-center">
+						{{ form.submit(class="button-27") }}
+				</div>
+			</fieldset>
+		</form>
 	</div>
 
 </body>
