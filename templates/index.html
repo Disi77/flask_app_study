@@ -74,6 +74,19 @@
 					</div>
 				</div>
 
+				<div class="row">
+					<div class="col-sm-6">
+							Changed by JS: <span id="result"></span>
+						
+					</div>
+					<div class="col-sm-6">
+						Changed by WTForms (after enter): 
+						{% if form.quantity.data %}
+						{{ form.quantity.data * 100 }}
+						{% endif %}
+					</div>
+				</div>
+
 				<div>
 					<label for="oamount">
 						Amount to Convert :
@@ -153,6 +166,7 @@
 			</fieldset>
 		</form>
 	</div>
+	<script type="text/javascript" src="static/js/script.js"></script>
 
 </body>
 
