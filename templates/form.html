@@ -62,26 +62,15 @@
 
         <div class="row">
             <div class="col-sm-6">
-                Changed by JS: <span id="result"></span>
-
+                <label for="oamount">
+                    Subtotal: <span id="subtotal">0</span> CZK
+                </label>
+                <span id="products" hidden>{{ products }}</span>
+                <span id="calculation"></span>
             </div>
-            <div class="col-sm-6">
-                Changed by WTForms (after enter):
-                {% if form.quantity.data %}
-                {{ form.quantity.data * 100 }}
-                {% endif %}
-            </div>
-        </div>
-
-        <div>
-            <label for="oamount">
-                Amount to Convert :
-            </label>
-            <input type="text" class="form-control" placeholder="0.00" id="oamount">
         </div>
 
         <div class="row">
-
             <div class="col-sm-6">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
