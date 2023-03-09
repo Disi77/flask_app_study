@@ -1,6 +1,6 @@
 function setValue(from, to) {
-    var toElement = document.getElementById(to);
     var fromElement = document.getElementById(from);
+    var toElement = document.getElementById(to);
     toElement.innerHTML = fromElement.value * 100;
 };
 
