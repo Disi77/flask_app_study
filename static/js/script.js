@@ -28,3 +28,7 @@ var selectedProduct = document.getElementById("product");
 selectedProduct.onchange = function () {
     calculatePrice();
 };
+
+window.onload = function () {
+    calculatePrice();
+};
